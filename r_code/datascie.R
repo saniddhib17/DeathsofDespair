@@ -153,7 +153,7 @@ library(tidyverse)
 # Pivot and summarize data
 Line_chart <- pivot_longer(
   cause_data,
-  cols = c(Deaths_Male, Deaths_Female), # Adjust column names if they differ
+  cols = c(Deaths_Male, Deaths_Female), 
   names_to = "Gender",
   values_to = "Death_Rate"
 ) %>%
@@ -172,7 +172,7 @@ ggplot(Line_chart, aes(x = Year, y = Death_Rate, color = Cause_of_death)) +
   geom_point(size = 2, shape = 21, fill = "black", color = "black") +
   scale_color_manual(values = c("#00AFBB", "#E7B800", "#FC4E07")) +
   scale_y_continuous(labels = scales::comma, limits = c(0, max(Line_chart$Death_Rate) * 1.1)) +
-  scale_x_continuous(breaks = seq(min(Line_chart$Year), max(Line_chart$Year), by = 1)) + # Ensure all years are shown
+  scale_x_continuous(breaks = seq(min(Line_chart$Year), max(Line_chart$Year), by = 1)) + 
   labs(
     title = "Death Rates Over Time by Gender (2011-2018)",
     subtitle = "Analysis of Suicide, Drug Poisoning, and Alcohol-related Deaths",
@@ -358,7 +358,7 @@ frequency_distribution <- function(cause_data) {
 freq_tables <- frequency_distribution(cause_data)
 
 # Example: Print frequency table for a specific variable (e.g., "Category")
-print(freq_tables[["Cause_of_death"]])  # Replace "Category" with your column name
+print(freq_tables[["Cause_of_death"]])  
 print(freq_tables[["Coastal_Classification"]])
 
 # Load required libraries
@@ -413,7 +413,7 @@ comparison_lm <- data.frame(
 )
 
 ggplot(comparison_lm, aes(x = Actual, y = Predicted, color = Coastal_Classification)) +
-  geom_point(size = 3, alpha = 0.8) +  # Scatter points with transparency
+  geom_point(size = 3, alpha = 0.8) +  
   geom_smooth(method = "lm", col = "black", linetype = "dashed") +  # Add regression line
   labs(
     title = "Linear Regression: Actual vs Predicted Mortality Rates",
@@ -440,7 +440,6 @@ randomforest_data <- cause_data %>%
     Coastal_Classification = as.factor(Coastal_Classification)
   )
 
-# Ensure the structure reflects proper factor conversion
 str(randomforest_data)
 
 # Remove missing values
