@@ -473,7 +473,7 @@ ggplot(Line_chart, aes(x = Year, y = Death_Rate, color = Cause_of_death)) +
   geom_point(linewidth = 1.5, shape = 21, fill = "black", color = "black") +
   scale_color_manual(values = c("#00AFBB", "#E7B800", "#FC4E07")) +
   scale_y_continuous(labels = scales::comma, limits = c(0, max(Line_chart$Death_Rate) * 1.1)) +
-  scale_x_continuous(breaks = seq(min(Line_chart$Year), max(Line_chart$Year), by = 1)) +  # Ensure all years are shown
+  scale_x_continuous(breaks = seq(min(Line_chart$Year), max(Line_chart$Year), by = 1)) +  
   labs(
     title = "Death Rates Over Time by Gender (2011-2018)",
     subtitle = "Analysis of Suicide, Drug Poisoning, and Alcohol-related Deaths",
@@ -638,33 +638,33 @@ treemap_data <- treemap_data %>%
 ggplot(treemap_data, aes(
   area = Total_Deaths, 
   fill = Cause_of_death, 
-  label = paste0(Cause_of_death, "\n", format(Total_Deaths, big.mark = ",")), # Add commas for readability
+  label = paste0(Cause_of_death, "\n", format(Total_Deaths, big.mark = ",")), 
   subgroup = Coastal_Classification
 )) +
-  geom_treemap() + # Create the treemap
-  geom_treemap_subgroup_border(color = "white", size = 1) + # Add borders between subgroups
+  geom_treemap() + 
+  geom_treemap_subgroup_border(color = "white", size = 1) + 
   geom_treemap_text(
     fontface = "bold", 
     color = "white", 
     place = "centre", 
-    size = 1.5, # Adjust label size for block text
+    size = 1.5, 
     grow = TRUE
-  ) + # Add labels for each block
+  ) + 
   geom_treemap_subgroup_text(
     fontface = "bold", 
     color = "black", 
-    place = "bottom", # Adjust position of subgroup labels
+    place = "bottom", 
     size = 6
-  ) + # Add labels for subgroups (Coastal Classification)
-  scale_fill_brewer(palette = "Reds", name = "Cause of Death") + # Use a red gradient color palette
+  ) + 
+  scale_fill_brewer(palette = "Reds", name = "Cause of Death") + 
   labs(
     title = "Treemap of Deaths Rates by Coastal Classification",
     subtitle = "For Causes: Suicide, Drug Poisoning, Alcohol-Related Deaths"
   ) +
   theme_minimal() +
   theme(
-    plot.title = element_text(size = 18, face = "bold", hjust = 0.5), # Center-align title
-    plot.subtitle = element_text(size = 14, hjust = 0.5), # Center-align subtitle
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5), 
+    plot.subtitle = element_text(size = 14, hjust = 0.5), 
     legend.title = element_text(size = 12, face = "bold"),
     legend.text = element_text(size = 10),
     panel.grid = element_blank()
@@ -672,8 +672,8 @@ ggplot(treemap_data, aes(
 
 # Ensure all components are ggplot objects
 Composite_Visualization <- (Line_chart + stacked_barchart) /
-  (treemap_data + line_plot) + # Replace with the ggplot objects
-  plot_layout(guides = "collect") + # Combine legends
+  (treemap_data + line_plot) + 
+  plot_layout(guides = "collect") + 
   plot_annotation(
     title = "Composite Visualization",
     subtitle = "Combined Visualizations of Different Data Representations",
