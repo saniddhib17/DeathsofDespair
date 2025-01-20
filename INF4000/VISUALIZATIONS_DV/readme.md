@@ -49,3 +49,15 @@ Key Visualizations and Insights:
    - Coastal towns have slightly higher average mortality rates compared to 
     non-coastal towns, suggesting potential localized challenges in coastal 
     areas.
+
+## How the Visualizations Address the Research Question:
+- Gender Differences:
+The line charts and bar charts show stark gender disparities, with males being disproportionately affected across all categories and years.
+
+-Age Group Variations:
+Mortality trends by age illustrate that middle-aged and older individuals are particularly vulnerable to deaths of despair, highlighting critical periods for intervention.
+
+-Geographical Patterns:
+Both the treemap and bar charts confirm that coastal areas face unique challenges in addressing deaths of despair, though non-coastal areas generally show higher absolute numbers.
+
+These insights can inform policymakers, healthcare professionals, and community planners about where to focus resources and interventions for maximum impact.
